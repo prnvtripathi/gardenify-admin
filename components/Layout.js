@@ -2,7 +2,7 @@ import Nav from "@/components/Nav"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const { data: session } = useSession()
   if (session) {
     return (
@@ -10,7 +10,6 @@ const Layout = ({children}) => {
         <Nav />
         <div className="flex-grow my-2 mr-2 bg-white rounded-lg p-4">
           <h2 className="my-2 p-2 text-black text-lg">{children}</h2>
-          <button className="bg-teal-800 text-white m-2 p-2 rounded-sm w-fit transition-all transition-800 hover:rounded-xl" onClick={() => signOut()}>Sign Out</button>
         </div>
       </div>
     )
