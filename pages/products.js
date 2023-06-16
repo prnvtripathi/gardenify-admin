@@ -1,9 +1,12 @@
 import Layout from "@/components/Layout"
+import Link from 'next/link'
 
 const Products = () => {
     return (
         <Layout>
-            <h1>Products</h1>
+            <Link href={'/products/new'} className='btn-primary'>
+                Add new Products
+            </Link>
         </Layout>
     )
 }
