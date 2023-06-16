@@ -3,12 +3,14 @@ import { useSession } from "next-auth/react";
 
 export default function Home() {
   const { data: session } = useSession()
-  if (!session) return;
   return (
     <Layout>
-      <div className="text-teal-900">
-        <h2 className="text-2xl font-bold">Dashboard</h2>
-        <p className="text-lg">Welcome back, {session.user.name}!</p>
+      <div className="text-teal-900 flex justify-between">
+        <h2 className="text-lg">Hello, <strong>{session?.user?.name}!</strong></h2>
+        <div className="flex gap-1 bg-gray-300 text-black items-center rounded-lg overflow-hidden px-1">
+          <img src={session?.user?.image} alt={session?.user?.name} className="w-6 h-6 rounded-lg" />
+          <p>{session?.user?.name}</p>
+        </div>
       </div>
     </Layout>
   )
