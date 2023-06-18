@@ -4,7 +4,7 @@ import Layout from "@/components/Layout"
 import Link from 'next/link'
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { FaPen } from "react-icons/fa"
+import { FaPen, FaTrash } from "react-icons/fa"
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -32,7 +32,16 @@ const Products = () => {
                         <tr>
                             <td>{product.name}</td>
                             <td>
-                                <Link href={`/products/edit/${product._id}`}><button className="flex gap-1 items-center"><FaPen size={16} />Edit</button></Link>
+                                <Link className="default" href={`/products/edit/${product._id}`}>
+                                    <button className="flex gap-1 items-center">
+                                        <FaPen size={16} />Edit
+                                    </button>
+                                </Link>
+                                <Link className="red" href={`/products/delete/${product._id}`}>
+                                    <button className="flex gap-1 items-center">
+                                        <FaTrash size={16} />Delete
+                                    </button>
+                                </Link>
                             </td>
                         </tr>
                     ))}

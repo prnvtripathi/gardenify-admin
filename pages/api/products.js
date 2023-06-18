@@ -6,7 +6,7 @@ const handler = async (req, res) => {
     await mongooseConnect()
 
     if (method === 'GET') {
-        if (req.query.id) {
+        if (req.query?.id) {
             const ProductDoc = await Product.findById(req.query.id)
             res.json(ProductDoc)
             return
@@ -27,6 +27,13 @@ const handler = async (req, res) => {
         const { name, description, price, _id } = req.body
         await Product.updateOne({ _id }, { name, description, price })
         res.json(true) 
+    }
+
+    if (method === 'DELETE') {
+        if (req.query?.id) {
+            await Product.deleteOne({ _id: req.query.id })
+            res.json(true)
+        }
     }
 }
 

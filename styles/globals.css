@@ -41,6 +41,21 @@ table.basic tr td {
     @apply border border-gray-400 px-2 py-1
 }
 
-table.basic a {
-    @apply bg-teal-800 text-white px-2 py-1 rounded-md inline-flex gap-1
+.default {
+    @apply bg-gray-400 text-black px-2 py-1 rounded-md inline-flex mx-1
+    transition-all duration-200
 }
+
+.default:hover {
+    @apply bg-gray-700 text-white
+}
+
+.red {
+    @apply border border-red-500 text-black px-2 py-1 rounded-md inline-flex mx-1
+    transition-all duration-200
+}
+
+.red:hover {
+    @apply border-red-600 bg-red-500 text-white
+}
+
