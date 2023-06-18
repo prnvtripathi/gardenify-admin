@@ -24,3 +24,23 @@ label {
 .btn-primary {
     @apply bg-teal-800 text-white px-4 py-1 rounded-md w-min my-2
 }
+
+.btn-primary:hover {
+    @apply bg-teal-900
+}
+
+table.basic {
+    @apply w-[80%] my-3
+}
+
+table.basic thead tr td {
+    @apply bg-teal-800 text-white px-2 py-1
+}
+
+table.basic tr td {
+    @apply border border-gray-400 px-2 py-1
+}
+
+table.basic a {
+    @apply bg-teal-800 text-white px-2 py-1 rounded-md inline-flex gap-1
+}
