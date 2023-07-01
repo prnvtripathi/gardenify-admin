@@ -16,17 +16,17 @@ const handler = async (req, res) => {
     }
 
     if (method === 'POST') {
-        const { name, description, price } = req.body
+        const { name, description, price, images } = req.body
         const ProductDoc = await Product.create({
-            name, description, price
+            name, description, price, images
         })
         res.json(ProductDoc)
     }
 
     if (method === 'PUT') {
-        const { name, description, price, _id } = req.body
-        await Product.updateOne({ _id }, { name, description, price })
-        res.json(true) 
+        const { name, description, price, images, _id } = req.body
+        await Product.updateOne({ _id }, { name, description, price, images })
+        res.json(true)
     }
 
     if (method === 'DELETE') {
