@@ -1,10 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { useRouter } from "next/router"
 import { FiUpload } from "react-icons/fi"
-import { set } from "mongoose"
 import Loader from "@/components/Loader"
 import { ReactSortable } from "react-sortablejs"
 
@@ -13,19 +12,28 @@ const ProductForm = ({
     name: initialName,
     description: initialDescription,
     price: initialPrice,
+    category: initialCategory,
     images: initialImages,
 }) => {
     const [name, setName] = useState(initialName || '')
     const [description, setDescription] = useState(initialDescription || '')
+    const [category, setCategory] = useState(initialCategory || '')
     const [images, setImages] = useState(initialImages || [])
     const [price, setPrice] = useState(initialPrice || '')
     const [isUploading, setIsUploading] = useState(false)
     const [goTOProducts, setGoToProducts] = useState(false)
+    const [categories, setCategories] = useState([])
     const router = useRouter()
+
+    useEffect(() => {
+        axios.get('/api/categories').then(res => {
+            setCategories(res.data)
+        })
+    }, [])
 
     async function saveProduct(e) {
         e.preventDefault()
-        const data = { name, description, price, images }
+        const data = { name, description, price, images, category }
         if (_id) {
             // update
             await axios.put('/api/products', { ...data, _id })
@@ -71,6 +79,17 @@ const ProductForm = ({
                 value={name}
                 onChange={e => setName(e.target.value)}
             />
+
+            <label>Category</label>
+            <select
+                value={category}
+                onChange={e => setCategory(e.target.value)}
+            >
+                <option value=''>Uncategorised</option>
+                {categories?.map(category => (
+                    <option key={category._id} value={category._id}>{category.name}</option>
+                ))}
+            </select>
 
             <label>Images</label>
             <div className="my-2 flex flex-wrap gap-2 items-center">
