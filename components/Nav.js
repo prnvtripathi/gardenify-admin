@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { AiOutlineShop } from 'react-icons/ai'
-import { MdOutlineSpaceDashboard, MdOutlineSettings } from 'react-icons/md'
+import { MdOutlineSpaceDashboard, MdOutlineSettings, MdOutlineCategory } from 'react-icons/md'
 import { IoFileTrayFullOutline, IoClipboardOutline } from 'react-icons/io5'
 
 const Nav = () => {
@@ -24,6 +24,7 @@ const Nav = () => {
                 <ul className='flex flex-col gap-4'>
                     <li><Link href={'/'} className={pathname === '/' ? activeLink : inactiveLink}><MdOutlineSpaceDashboard size={24} />Dashboard</Link></li>
                     <li><Link href={'/products'} className={pathname.includes('/products') ? activeLink : inactiveLink}><IoFileTrayFullOutline size={24} />Products</Link></li>
+                    <li><Link href={'/categories'} className={pathname.includes('/categories') ? activeLink : inactiveLink}><MdOutlineCategory size={24} />Categories</Link></li>
                     <li><Link href={'/orders'} className={pathname.includes('/orders') ? activeLink : inactiveLink}><IoClipboardOutline size={24} />Orders</Link></li>
                     <li><Link href={'/settings'} className={pathname.includes('/settings') ? activeLink : inactiveLink}><MdOutlineSettings size={24} />Settings</Link></li>
                 </ul>
