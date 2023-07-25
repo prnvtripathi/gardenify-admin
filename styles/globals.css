@@ -30,11 +30,11 @@ label {
 }
 
 .btn-primary {
-    @apply bg-teal-800 text-white px-4 py-1 rounded-md w-min my-2
+    @apply bg-primaryHover text-white px-4 py-1 rounded-md w-min my-2
 }
 
 .btn-primary:hover {
-    @apply bg-teal-900
+    @apply bg-primary text-gray-900
 }
 
 table.basic {
