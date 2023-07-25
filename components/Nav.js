@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { AiOutlineShop } from 'react-icons/ai'
-import { MdOutlineSpaceDashboard, MdOutlineSettings, MdOutlineCategory } from 'react-icons/md'
+import { MdOutlineSpaceDashboard, MdOutlineSettings, MdOutlineCategory, MdOutlineLogout } from 'react-icons/md'
 import { IoFileTrayFullOutline, IoClipboardOutline } from 'react-icons/io5'
+import { signOut } from 'next-auth/react'
 
 const Nav = () => {
     const inactiveLink = 'flex gap-1 hover:outline-white hover:outline p-2 rounded-l-lg transition-all transition-800'
@@ -27,6 +28,11 @@ const Nav = () => {
                     <li><Link href={'/categories'} className={pathname.includes('/categories') ? activeLink : inactiveLink}><MdOutlineCategory size={24} />Categories</Link></li>
                     <li><Link href={'/orders'} className={pathname.includes('/orders') ? activeLink : inactiveLink}><IoClipboardOutline size={24} />Orders</Link></li>
                     <li><Link href={'/settings'} className={pathname.includes('/settings') ? activeLink : inactiveLink}><MdOutlineSettings size={24} />Settings</Link></li>
+                    <li><button
+                        onClick={() => signOut()}
+                        className="flex gap-1 justify-center items-center p-2 hover:bg-white hover:text-teal-800 transition duration-300 rounded-lg">
+                        <MdOutlineLogout size={24} />Logout
+                    </button></li>
                 </ul>
             </nav>
         </aside>
