@@ -114,6 +114,7 @@ const Categories = () => {
                             className='border border-gray-300 rounded-lg p-1 m-0'
                             placeholder="Category name"
                             value={name}
+                            required
                             onChange={(e) => setName(e.target.value)}
                         />
                         <select
