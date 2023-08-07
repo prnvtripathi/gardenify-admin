@@ -30,27 +30,32 @@ label {
 }
 
 .btn-primary {
-    @apply bg-primaryHover text-white px-4 py-1 rounded-md w-min my-2
+    @apply bg-primary text-white px-4 py-1 rounded-md w-min my-2 
+    transition-all duration-200
+    text-sm sm:text-base
 }
 
 .btn-primary:hover {
-    @apply bg-primary text-gray-900
+    @apply bg-primaryHover
 }
 
 table.basic {
-    @apply w-[70%] my-3
+    @apply w-full my-3 rounded-md shadow-md
+    text-sm sm:text-base
 }
 
 table.basic thead tr td {
-    @apply bg-teal-800 text-white px-2 py-1
+    @apply bg-gray-200 text-gray-700 text-sm uppercase border-b border-gray-400 px-4 py-2
 }
 
 table.basic tr td {
-    @apply border border-gray-400 px-2 py-1
+    @apply px-4 py-1 border-b border-gray-400 text-gray-700
 }
 
 .default {
-    @apply bg-gray-400 text-black px-2 py-1 rounded-md inline-flex mx-1 transition-all duration-200 items-center gap-1
+    @apply bg-gray-400 text-black px-1 py-0 rounded-md 
+    inline-flex mx-1 transition-all duration-200 items-center gap-1
+    text-sm sm:text-base sm:px-2 sm:py-0.5
 }
 
 .default:hover {
@@ -58,7 +63,9 @@ table.basic tr td {
 }
 
 .red {
-    @apply border border-red-500 text-black px-2 py-1 rounded-md inline-flex mx-1 transition-all duration-200 items-center gap-1
+    @apply border border-red-500 text-black px-1 py-0 rounded-md
+     inline-flex mx-1 transition-all duration-200 items-center gap-1
+    text-sm sm:text-base 
 }
 
 .red:hover {

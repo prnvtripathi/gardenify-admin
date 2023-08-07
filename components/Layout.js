@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
         </div>
         <div className="min-h-screen flex">
           <Nav show={showNav} />
-          <div className="flex-grow my-2 mr-2 bg-white rounded-lg p-4">
+          <div className="flex-grow bg-gray-100 p-4">
             <h2 className="my-2 p-2 text-black text-lg">{children}</h2>
           </div>
         </div>
