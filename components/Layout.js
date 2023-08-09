@@ -1,7 +1,7 @@
 "use client"
 
 import Nav from "@/components/Nav"
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn } from "next-auth/react"
 import { MdMenu } from "react-icons/md"
 import { useState } from "react"
 import Link from "next/link"

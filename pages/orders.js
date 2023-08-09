@@ -1,10 +1,17 @@
-const { default: Layout } = require("@/components/Layout")
+import Head from 'next/head'
+import Layout from '@/components/Layout'
 
 const Orders = () => {
     return (
-        <Layout>
-            <h1>Orders</h1>
-        </Layout>
+        <>
+            <Head>
+                <title>Orders</title>
+            </Head>
+            <Layout>
+                <h1>Orders</h1>
+            </Layout>
+        </>
+
     )
 }
 
