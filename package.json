@@ -15,7 +15,7 @@
     "axios": "^1.4.0",
     "mime-types": "^2.1.35",
     "mongodb": "^5.8.0",
-    "mongoose": "^7.3.0",
+    "mongoose": "^7.3.3",
     "multiparty": "^4.2.3",
     "next": "^13.4.9",
     "next-auth": "^4.22.1",
