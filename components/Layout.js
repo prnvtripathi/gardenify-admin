@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
     return (
       <div className="bg-bg w-screen h-screen flex items-center justify-center">
         <div className="text-center">
-          <button className="bg-white p-2 rounded-none transition-all transition-800 hover:rounded-xl" onClick={() => signIn()}>Login with Google</button>
+          <button className="bg-white p-2 rounded-none transition-all transition-800 hover:rounded-xl" onClick={() => signIn("google")}>Login with Google</button>
         </div>
       </div>
     )
