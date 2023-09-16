@@ -44,7 +44,8 @@ table.basic {
     text-sm sm:text-base
 }
 
-table.basic thead tr td {
+table.basic thead tr td,
+table.basic thead tr th {
     @apply bg-gray-200 text-gray-700 text-sm uppercase border-b border-gray-400 px-4 py-2
 }
 

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>Home | {session?.user?.name}</title>
+      <title>Home {session?.user?.name}</title>
     </Head>
       <Layout>
         <div className="text-teal-900 flex justify-between">
