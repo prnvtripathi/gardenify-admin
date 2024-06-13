@@ -18,7 +18,7 @@ const Nav = ({ show }) => {
             <div className='my-4 text-highlight'>
                 <Link href="/" className='flex items-center'>
                     <AiOutlineShop size={32} />
-                    <span className='text-xl font-sans mx-3'>Gardenify Admin</span>
+                    <span className='text-xl font-sans mx-3'>Iapple Admin</span>
                 </Link>
             </div>
             <nav>
